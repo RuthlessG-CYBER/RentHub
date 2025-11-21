@@ -88,20 +88,20 @@ export default function Dashboard() {
     const fetchData = async () => {
       try {
         const myProducts = await axios.get(
-          `http://localhost:4040/api/user/${user.id}/products`
+          `https://renthub-backend-llow.onrender.com/api/user/${user.id}/products`
         );
         setProducts(myProducts.data.products || []);
 
-        const all = await axios.get(`http://localhost:4040/api/user/products`);
+        const all = await axios.get(`https://renthub-backend-llow.onrender.com/api/user/products`);
         setAllProducts(all.data.products || []);
 
         const myBookings = await axios.get(
-          `http://localhost:4040/api/user/bookings/${user.id}`
+          `https://renthub-backend-llow.onrender.com/api/user/bookings/${user.id}`
         );
         setBookings(myBookings.data.bookings || []);
 
         const notif = await axios.get(
-          `http://localhost:4040/api/user/${user.id}/notifications`
+          `https://renthub-backend-llow.onrender.com/api/user/${user.id}/notifications`
         );
         setNotifications(notif.data.notifications || []);
       } catch (err) {

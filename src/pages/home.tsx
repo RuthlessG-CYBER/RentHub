@@ -134,7 +134,7 @@ export default function Home() {
 
     try {
       await axios.post(
-        `http://localhost:4040/api/user/bookings/${bookingProduct.ownerId}`,
+        `https://renthub-backend-llow.onrender.com/api/user/bookings/${bookingProduct.ownerId}`,
         payload
       );
 
@@ -175,7 +175,7 @@ export default function Home() {
       const userId = user.id;
 
       const res = await axios.put(
-        `http://localhost:4040/api/user/${userId}/products/${productId}`,
+        `https://renthub-backend-llow.onrender.com/api/user/${userId}/products/${productId}`,
         editData
       );
 
@@ -211,7 +211,7 @@ export default function Home() {
       const userId = user.id;
 
       await axios.delete(
-        `http://localhost:4040/api/user/${userId}/products/${id}`
+        `https://renthub-backend-llow.onrender.com/api/user/${userId}/products/${id}`
       );
 
       setProducts((prev) => prev.filter((item) => item._id !== id));
@@ -237,7 +237,7 @@ export default function Home() {
       const userId = user.id;
 
       const res = await axios.post(
-        `http://localhost:4040/api/user/${userId}/details`,
+        `https://renthub-backend-llow.onrender.com/api/user/${userId}/details`,
         form
       );
 
@@ -273,7 +273,7 @@ export default function Home() {
     const user = JSON.parse(savedUser);
     const userId = user.id;
     axios
-      .get(`http://localhost:4040/api/user/${userId}/products`)
+      .get(`https://renthub-backend-llow.onrender.com/api/user/${userId}/products`)
       .then((res) => {
         console.log("MY PROPERTIES:", res.data.products);
         setMyProducts(res.data.products || []);
@@ -283,7 +283,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4040/api/user/products")
+      .get("https://renthub-backend-llow.onrender.com/api/user/products")
       .then((res) => {
         console.log("API RESPONSE:", res.data);
         setProducts(res.data.products || []);

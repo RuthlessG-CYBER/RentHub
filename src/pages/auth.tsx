@@ -19,8 +19,8 @@ export default function AuthPage() {
 
         try {
             const url = isLogin
-                ? "http://localhost:4040/api/user/login"
-                : "http://localhost:4040/api/user/signup";
+                ? "https://renthub-backend-llow.onrender.com/api/user/login"
+                : "https://renthub-backend-llow.onrender.com/api/user/signup";
 
             const response = await axios.post(url, form);
 
